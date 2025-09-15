@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Basics</title>
+    <style>
+body {
+            background-color: rgb(227, 125, 142);
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #000000, #ff3366, #ff66a3, #000000);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration-color: transparent;
+            animation: gradientShift 3s ease infinite;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
+            margin: 30px 0;
+        }
+        @keyframes gradientShift{
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%; }
+        }
+        .images-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .image-item {
+            margin: 0 10px;
+            text-align: center;
+        }
+        .image-item img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+        /* --- UPDATED BUTTON STYLES --- */
+        .image-link {
+            display: inline-block; /* Allows padding and margins to work correctly */
+            margin-top: 15px;
+            padding: 12px 25px; /* Top/Bottom, Left/Right padding */
+            background-color: #ff3366; /* A nice pink shade */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px; /* This gives the rounded button effect */
+            border: 2px solid #cc0044; /* A slightly darker border */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+        /* Hover effect for interactivity */
+        .image-link:hover {
+            background-color: #cc0044; /* Darker background on hover */
+            transform: translateY(-2px); /* Button lifts up slightly */
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Shadow becomes more prominent */
+        }
+        /* Active effect for when the button is clicked */
+        .image-link:active {
+            transform: translateY(0); /* Puts the button back down */
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Reduces the shadow */
+        }
+        hr {
+            border: 1px solid black;
+            margin: 20px 0;
+        }
+        .copyright {
+            font-family: "Courier New", monospace;
+            font-style: italic;
+            text-align: right;
+            padding-right: 20px;
+            margin-top: 10px;
+        }
+        </style>
+</head>
+<body>
+    <!-- Title of the webpage -->
+     <h1>Pink is the new Black</h1>
+     <!-- Container for the two images -->
+     <div class="images-container">
+        <figure class="image-item">
+            <!-- Amazon: Echo Dot -->
+            <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFtYXpvbiUyMGVjaG8lMjBkb3QlMjBwaW5rfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" alt="Amazon Echo Dot">
+            <figcaption><a href="https://www.amazon.de/s?k=bluetooth+speaker+best&language=en_GB&adgrpid=83571649858&hvadid=695741742694&hvdev=c&hvlocphy=9042055&hvnetw=g&hvqmt=b&hvrand=6396154026995865119&hvtargid=kwd-4954323310&hydadcr=29530_2501600&mcid=8727635f6b793ab8862773a770ce6c8b&tag=googdemozdesk-21&ref=pd_sl_4r25yyfj5p_b" class="image-link">Amazon</a></figcaption>
+        </figure>
+        <figure class="image-item">
+            <!-- Alibaba: Wireless Earbuds -->
+            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBpbmslMjBlYXJidWRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" alt="Wireless Earbuds">
+            <figcaption><a href="https://www.alibaba.com/showroom/best-earbuds.html?src=sem_ggl&field=UG&from=sem_ggl&cmpgn=22651283733&adgrp=&fditm=&tgt=&locintrst=&locphyscl=9042055&mtchtyp=&ntwrk=x&device=c&dvcmdl=&creative=&plcmnt=&plcmntcat=&aceid=&position=&gad_source=1&gad_campaignid=22661135756&gbraid=0AAAAAD8m77pTV3zwcoiywKCt9gWZbq11y&gclid=EAIaIQobChMIo6j0mY_bjwMVN52DBx2P7TQcEAAYAiAAEgKeMvD_BwE" class="image-link">Alibaba</a></figcaption>
+        </figure>
+
+        <div class="copyright">
+            kskender
+        </div>
+    </body>
+    </html>
