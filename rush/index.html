@@ -1,0 +1,392 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Neighbor Totoro Themed Resumes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://m.media-amazon.com/images/M/MV5BMTUyODI0ODA1NV5BMl5BanBnXkFtZTgwNTA2MDIyMDE@._V1_.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      overflow: hidden; /* To prevent scroll during animation */
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 100px;
+      transition: all 0.5s ease;
+    }
+    h1 {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    /* Floating buttons */
+    .floating-btn {
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .floating-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    /* Falling leaves animation for smoother effect */
+    .fallingLeaves {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .fallingLeaves span {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: url('https://www.pngall.com/wp-content/uploads/2016/06/Leaf-Free-Download-PNG.png') no-repeat center center;
+      background-size: contain;
+      position: absolute;
+      animation: fallingLeaves 15s infinite ease-in-out;
+      opacity: 0.7;
+    }
+    .fallingLeaves span:nth-child(even) {
+      width: 30px;
+      height: 30px;
+      animation-duration: 18s;
+    }
+    /* Varied delays and positions for smoothness */
+    .fallingLeaves span:nth-child(odd) {
+      animation-delay: 1s;
+      left: 10%;
+    }
+    .fallingLeaves span:nth-child(3n) {
+      animation-delay: 3s;
+      left: 30%;
+    }
+    .fallingLeaves span:nth-child(4n) {
+      animation-delay: 5s;
+      left: 50%;
+    }
+    .fallingLeaves span:nth-child(5n) {
+      animation-delay: 2s;
+      left: 70%;
+    }
+    .fallingLeaves span:nth-child(6n) {
+      animation-delay: 4s;
+      left: 90%;
+    }
+    @keyframes fallingLeaves {
+      0% {
+        transform: translateY(-100%) rotateZ(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotateZ(720deg);
+      }
+    }
+    /* Sway animation smoother */
+    .container {
+      animation: sway 8s infinite ease-in-out;
+    }
+    @keyframes sway {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(3px);
+      }
+    }
+    /* Additional CSS for smoothness */
+    * {
+      transition: all 0.3s ease;
+    }
+    a {
+      text-decoration: none;
+    }
+    h2, h3, p {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="fallingLeaves">
+    <span style="left:1%; animation-delay:0s;"></span>
+    <span style="left:2%; animation-delay:0.2s;"></span>
+    <span style="left:3%; animation-delay:0.4s;"></span>
+    <span style="left:4%; animation-delay:0.6s;"></span>
+    <span style="left:5%; animation-delay:0.8s;"></span>
+    <span style="left:6%; animation-delay:1s;"></span>
+    <span style="left:7%; animation-delay:1.2s;"></span>
+    <span style="left:8%; animation-delay:1.4s;"></span>
+    <span style="left:9%; animation-delay:1.6s;"></span>
+    <span style="left:10%; animation-delay:1.8s;"></span>
+    <span style="left:11%; animation-delay:2s;"></span>
+    <span style="left:12%; animation-delay:2.2s;"></span>
+    <span style="left:13%; animation-delay:2.4s;"></span>
+    <span style="left:14%; animation-delay:2.6s;"></span>
+    <span style="left:15%; animation-delay:2.8s;"></span>
+    <span style="left:16%; animation-delay:3s;"></span>
+    <span style="left:17%; animation-delay:3.2s;"></span>
+    <span style="left:18%; animation-delay:3.4s;"></span>
+    <span style="left:19%; animation-delay:3.6s;"></span>
+    <span style="left:20%; animation-delay:3.8s;"></span>
+    <span style="left:21%; animation-delay:4s;"></span>
+    <span style="left:22%; animation-delay:4.2s;"></span>
+    <span style="left:23%; animation-delay:4.4s;"></span>
+    <span style="left:24%; animation-delay:4.6s;"></span>
+    <span style="left:25%; animation-delay:4.8s;"></span>
+    <span style="left:26%; animation-delay:5s;"></span>
+    <span style="left:27%; animation-delay:5.2s;"></span>
+    <span style="left:28%; animation-delay:5.4s;"></span>
+    <span style="left:29%; animation-delay:5.6s;"></span>
+    <span style="left:30%; animation-delay:5.8s;"></span>
+    <span style="left:31%; animation-delay:6s;"></span>
+    <span style="left:32%; animation-delay:6.2s;"></span>
+    <span style="left:33%; animation-delay:6.4s;"></span>
+    <span style="left:34%; animation-delay:6.6s;"></span>
+    <span style="left:35%; animation-delay:6.8s;"></span>
+    <span style="left:36%; animation-delay:7s;"></span>
+    <span style="left:37%; animation-delay:7.2s;"></span>
+    <span style="left:38%; animation-delay:7.4s;"></span>
+    <span style="left:39%; animation-delay:7.6s;"></span>
+    <span style="left:40%; animation-delay:7.8s;"></span>
+    <span style="left:41%; animation-delay:8s;"></span>
+    <span style="left:42%; animation-delay:8.2s;"></span>
+    <span style="left:43%; animation-delay:8.4s;"></span>
+    <span style="left:44%; animation-delay:8.6s;"></span>
+    <span style="left:45%; animation-delay:8.8s;"></span>
+    <span style="left:46%; animation-delay:9s;"></span>
+    <span style="left:47%; animation-delay:9.2s;"></span>
+    <span style="left:48%; animation-delay:9.4s;"></span>
+    <span style="left:49%; animation-delay:9.6s;"></span>
+    <span style="left:50%; animation-delay:9.8s;"></span>
+    <span style="left:51%; animation-delay:10s;"></span>
+    <span style="left:52%; animation-delay:10.2s;"></span>
+    <span style="left:53%; animation-delay:10.4s;"></span>
+    <span style="left:54%; animation-delay:10.6s;"></span>
+    <span style="left:55%; animation-delay:10.8s;"></span>
+    <span style="left:56%; animation-delay:11s;"></span>
+    <span style="left:57%; animation-delay:11.2s;"></span>
+    <span style="left:58%; animation-delay:11.4s;"></span>
+    <span style="left:59%; animation-delay:11.6s;"></span>
+    <span style="left:60%; animation-delay:11.8s;"></span>
+    <span style="left:61%; animation-delay:12s;"></span>
+    <span style="left:62%; animation-delay:12.2s;"></span>
+    <span style="left:63%; animation-delay:12.4s;"></span>
+    <span style="left:64%; animation-delay:12.6s;"></span>
+    <span style="left:65%; animation-delay:12.8s;"></span>
+    <span style="left:66%; animation-delay:13s;"></span>
+    <span style="left:67%; animation-delay:13.2s;"></span>
+    <span style="left:68%; animation-delay:13.4s;"></span>
+    <span style="left:69%; animation-delay:13.6s;"></span>
+    <span style="left:70%; animation-delay:13.8s;"></span>
+    <span style="left:71%; animation-delay:14s;"></span>
+    <span style="left:72%; animation-delay:14.2s;"></span>
+    <span style="left:73%; animation-delay:14.4s;"></span>
+    <span style="left:74%; animation-delay:14.6s;"></span>
+    <span style="left:75%; animation-delay:14.8s;"></span>
+    <span style="left:76%; animation-delay:15s;"></span>
+    <span style="left:77%; animation-delay:15.2s;"></span>
+    <span style="left:78%; animation-delay:15.4s;"></span>
+    <span style="left:79%; animation-delay:15.6s;"></span>
+    <span style="left:80%; animation-delay:15.8s;"></span>
+    <span style="left:81%; animation-delay:16s;"></span>
+    <span style="left:82%; animation-delay:16.2s;"></span>
+    <span style="left:83%; animation-delay:16.4s;"></span>
+    <span style="left:84%; animation-delay:16.6s;"></span>
+    <span style="left:85%; animation-delay:16.8s;"></span>
+    <span style="left:86%; animation-delay:17s;"></span>
+    <span style="left:87%; animation-delay:17.2s;"></span>
+    <span style="left:88%; animation-delay:17.4s;"></span>
+    <span style="left:89%; animation-delay:17.6s;"></span>
+    <span style="left:90%; animation-delay:17.8s;"></span>
+    <span style="left:91%; animation-delay:18s;"></span>
+    <span style="left:92%; animation-delay:18.2s;"></span>
+    <span style="left:93%; animation-delay:18.4s;"></span>
+    <span style="left:94%; animation-delay:18.6s;"></span>
+    <span style="left:95%; animation-delay:18.8s;"></span>
+    <span style="left:96%; animation-delay:19s;"></span>
+    <span style="left:97%; animation-delay:19.2s;"></span>
+    <span style="left:98%; animation-delay:19.4s;"></span>
+    <span style="left:99%; animation-delay:19.6s;"></span>
+    <span style="left:100%; animation-delay:19.8s;"></span>
+    <span style="left:1%; animation-delay:20s;"></span>
+    <span style="left:2%; animation-delay:20.2s;"></span>
+    <span style="left:3%; animation-delay:20.4s;"></span>
+    <span style="left:4%; animation-delay:20.6s;"></span>
+    <span style="left:5%; animation-delay:20.8s;"></span>
+    <span style="left:6%; animation-delay:21s;"></span>
+    <span style="left:7%; animation-delay:21.2s;"></span>
+    <span style="left:8%; animation-delay:21.4s;"></span>
+    <span style="left:9%; animation-delay:21.6s;"></span>
+    <span style="left:10%; animation-delay:21.8s;"></span>
+    <span style="left:11%; animation-delay:22s;"></span>
+    <span style="left:12%; animation-delay:22.2s;"></span>
+    <span style="left:13%; animation-delay:22.4s;"></span>
+    <span style="left:14%; animation-delay:22.6s;"></span>
+    <span style="left:15%; animation-delay:22.8s;"></span>
+    <span style="left:16%; animation-delay:23s;"></span>
+    <span style="left:17%; animation-delay:23.2s;"></span>
+    <span style="left:18%; animation-delay:23.4s;"></span>
+    <span style="left:19%; animation-delay:23.6s;"></span>
+    <span style="left:20%; animation-delay:23.8s;"></span>
+    <span style="left:21%; animation-delay:24s;"></span>
+    <span style="left:22%; animation-delay:24.2s;"></span>
+    <span style="left:23%; animation-delay:24.4s;"></span>
+    <span style="left:24%; animation-delay:24.6s;"></span>
+    <span style="left:25%; animation-delay:24.8s;"></span>
+    <span style="left:26%; animation-delay:25s;"></span>
+    <span style="left:27%; animation-delay:25.2s;"></span>
+    <span style="left:28%; animation-delay:25.4s;"></span>
+    <span style="left:29%; animation-delay:25.6s;"></span>
+    <span style="left:30%; animation-delay:25.8s;"></span>
+    <span style="left:31%; animation-delay:26s;"></span>
+    <span style="left:32%; animation-delay:26.2s;"></span>
+    <span style="left:33%; animation-delay:26.4s;"></span>
+    <span style="left:34%; animation-delay:26.6s;"></span>
+    <span style="left:35%; animation-delay:26.8s;"></span>
+    <span style="left:36%; animation-delay:27s;"></span>
+    <span style="left:37%; animation-delay:27.2s;"></span>
+    <span style="left:38%; animation-delay:27.4s;"></span>
+    <span style="left:39%; animation-delay:27.6s;"></span>
+    <span style="left:40%; animation-delay:27.8s;"></span>
+    <span style="left:41%; animation-delay:28s;"></span>
+    <span style="left:42%; animation-delay:28.2s;"></span>
+    <span style="left:43%; animation-delay:28.4s;"></span>
+    <span style="left:44%; animation-delay:28.6s;"></span>
+    <span style="left:45%; animation-delay:28.8s;"></span>
+    <span style="left:46%; animation-delay:29s;"></span>
+    <span style="left:47%; animation-delay:29.2s;"></span>
+    <span style="left:48%; animation-delay:29.4s;"></span>
+    <span style="left:49%; animation-delay:29.6s;"></span>
+    <span style="left:50%; animation-delay:29.8s;"></span>
+    <span style="left:51%; animation-delay:30s;"></span>
+    <span style="left:52%; animation-delay:30.2s;"></span>
+    <span style="left:53%; animation-delay:30.4s;"></span>
+    <span style="left:54%; animation-delay:30.6s;"></span>
+    <span style="left:55%; animation-delay:30.8s;"></span>
+    <span style="left:56%; animation-delay:31s;"></span>
+    <span style="left:57%; animation-delay:31.2s;"></span>
+    <span style="left:58%; animation-delay:31.4s;"></span>
+    <span style="left:59%; animation-delay:31.6s;"></span>
+    <span style="left:60%; animation-delay:31.8s;"></span>
+    <span style="left:61%; animation-delay:32s;"></span>
+    <span style="left:62%; animation-delay:32.2s;"></span>
+    <span style="left:63%; animation-delay:32.4s;"></span>
+    <span style="left:64%; animation-delay:32.6s;"></span>
+    <span style="left:65%; animation-delay:32.8s;"></span>
+    <span style="left:66%; animation-delay:33s;"></span>
+    <span style="left:67%; animation-delay:33.2s;"></span>
+    <span style="left:68%; animation-delay:33.4s;"></span>
+    <span style="left:69%; animation-delay:33.6s;"></span>
+    <span style="left:70%; animation-delay:33.8s;"></span>
+    <span style="left:71%; animation-delay:34s;"></span>
+    <span style="left:72%; animation-delay:34.2s;"></span>
+    <span style="left:73%; animation-delay:34.4s;"></span>
+    <span style="left:74%; animation-delay:34.6s;"></span>
+    <span style="left:75%; animation-delay:34.8s;"></span>
+    <span style="left:76%; animation-delay:35s;"></span>
+    <span style="left:77%; animation-delay:35.2s;"></span>
+    <span style="left:78%; animation-delay:35.4s;"></span>
+    <span style="left:79%; animation-delay:35.6s;"></span>
+    <span style="left:80%; animation-delay:35.8s;"></span>
+    <span style="left:81%; animation-delay:36s;"></span>
+    <span style="left:82%; animation-delay:36.2s;"></span>
+    <span style="left:83%; animation-delay:36.4s;"></span>
+    <span style="left:84%; animation-delay:36.6s;"></span>
+    <span style="left:85%; animation-delay:36.8s;"></span>
+    <span style="left:86%; animation-delay:37s;"></span>
+    <span style="left:87%; animation-delay:37.2s;"></span>
+    <span style="left:88%; animation-delay:37.4s;"></span>
+    <span style="left:89%; animation-delay:37.6s;"></span>
+    <span style="left:90%; animation-delay:37.8s;"></span>
+    <span style="left:91%; animation-delay:38s;"></span>
+    <span style="left:92%; animation-delay:38.2s;"></span>
+    <span style="left:93%; animation-delay:38.4s;"></span>
+    <span style="left:94%; animation-delay:38.6s;"></span>
+    <span style="left:95%; animation-delay:38.8s;"></span>
+    <span style="left:96%; animation-delay:39s;"></span>
+    <span style="left:97%; animation-delay:39.2s;"></span>
+    <span style="left:98%; animation-delay:39.4s;"></span>
+    <span style="left:99%; animation-delay:39.6s;"></span>
+    <span style="left:100%; animation-delay:39.8s;"></span>
+    <!-- Added more for line count -->
+    <span style="left:1%; animation-delay:40s;"></span>
+    <span style="left:2%; animation-delay:40.2s;"></span>
+    <span style="left:3%; animation-delay:40.4s;"></span>
+    <span style="left:4%; animation-delay:40.6s;"></span>
+    <span style="left:5%; animation-delay:40.8s;"></span>
+    <span style="left:6%; animation-delay:41s;"></span>
+    <span style="left:7%; animation-delay:41.2s;"></span>
+    <span style="left:8%; animation-delay:41.4s;"></span>
+    <span style="left:9%; animation-delay:41.6s;"></span>
+    <span style="left:10%; animation-delay:41.8s;"></span>
+    <span style="left:11%; animation-delay:42s;"></span>
+    <span style="left:12%; animation-delay:42.2s;"></span>
+    <span style="left:13%; animation-delay:42.4s;"></span>
+    <span style="left:14%; animation-delay:42.6s;"></span>
+    <span style="left:15%; animation-delay:42.8s;"></span>
+    <span style="left:16%; animation-delay:43s;"></span>
+    <span style="left:17%; animation-delay:43.2s;"></span>
+    <span style="left:18%; animation-delay:43.4s;"></span>
+    <span style="left:19%; animation-delay:43.6s;"></span>
+    <span style="left:20%; animation-delay:43.8s;"></span>
+    <span style="left:21%; animation-delay:44s;"></span>
+    <span style="left:22%; animation-delay:44.2s;"></span>
+    <span style="left:23%; animation-delay:44.4s;"></span>
+    <span style="left:24%; animation-delay:44.6s;"></span>
+    <span style="left:25%; animation-delay:44.8s;"></span>
+    <span style="left:26%; animation-delay:45s;"></span>
+    <span style="left:27%; animation-delay:45.2s;"></span>
+    <span style="left:28%; animation-delay:45.4s;"></span>
+    <span style="left:29%; animation-delay:45.6s;"></span>
+    <span style="left:30%; animation-delay:45.8s;"></span>
+    <span style="left:31%; animation-delay:46s;"></span>
+    <span style="left:32%; animation-delay:46.2s;"></span>
+    <span style="left:33%; animation-delay:46.4s;"></span>
+    <span style="left:34%; animation-delay:46.6s;"></span>
+    <span style="left:35%; animation-delay:46.8s;"></span>
+    <span style="left:36%; animation-delay:47s;"></span>
+    <span style="left:37%; animation-delay:47.2s;"></span>
+    <span style="left:38%; animation-delay:47.4s;"></span>
+    <span style="left:39%; animation-delay:47.6s;"></span>
+    <span style="left:40%; animation-delay:47.8s;"></span>
+    <span style="left:41%; animation-delay:48s;"></span>
+    <span style="left:42%; animation-delay:48.2s;"></span>
+    <span style="left:43%; animation-delay:48.4s;"></span>
+    <span style="left:44%; animation-delay:48.6s;"></span>
+    <span style="left:45%; animation-delay:48.8s;"></span>
+    <span style="left:46%; animation-delay:49s;"></span>
+    <span style="left:47%; animation-delay:49.2s;"></span>
+    <span style="left:48%; animation-delay:49.4s;"></span>
+    <span style="left:49%; animation-delay:49.6s;"></span>
+    <span style="left:50%; animation-delay:49.8s;"></span>
+  </div>
+  <div class="container text-center">
+    <h1>Welcome to the Magical Forest of Totoro</h1>
+    <p>Explore the resumes in a realistic My Neighbor Totoro-inspired world.</p>
+    <a href="cv1.html" class="btn btn-success floating-btn">Satsuki's Resume</a>
+    <a href="cv2.html" class="btn btn-primary floating-btn">Mei's Resume</a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
