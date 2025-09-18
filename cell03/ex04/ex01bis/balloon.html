@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: top;
+      align-items: top;
+      height: 100vh;
+      margin: 0;
+      background: #000000;
+    }
+    #balloon {
+      width: 200px;
+      height: 200px;
+      margin: 30px 30px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease; /* smooth growth/shrink */
+    }
+  </style>
+  <!-- jQuery starts here -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="balloon"></div>
+
+  <script>
+    $(document).ready(function() {
+      let size = 200;
+      const colors = ["red", "green", "blue"];
+      let colorIndex = 0;
+
+      // Handle click
+      $("#balloon").on("click", function() {
+        size += 10;
+
+        colorIndex = (colorIndex + 1) % colors.length;
+        $(this).css("background-color", colors[colorIndex]);
+
+        if (size > 420) {
+          size = 200;
+          colorIndex = 0;
+          $(this).css("background-color", colors[colorIndex]);
+        }
+
+        $(this).css({
+          width: size + "px",
+          height: size + "px"
+        });
+      });
+
+      // Handle mouseleave
+      $("#balloon").on("mouseleave", function() {
+        if (size > 200) {
+          size -= 5;
+        }
+
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+        $(this).css("background-color", colors[colorIndex]);
+
+        $(this).css({
+          width: size + "px",
+          height: size + "px"
+        });
+      });
+    });
+    /* Ends here */
+  </script>
+</body>
+</html>

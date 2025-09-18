@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #4b0303; /* light background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.profile-card {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 300px;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+/* Invisible Table */
+.info-table {
+    width: 100%;
+    border-collapse: collapse; /* remove gaps */
+    table-layout: fixed; /*prevents overflow */
+    text-align: center;
+}
+.info-table td{
+    padding: 10px 0;
+    vertical-align: middle;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* makes circle */
+    object-fit: cover;  /* maintain aspect ratio */
+    margin-bottom: 10px;
+    border: 4px solid rgba(127, 3, 3, 0.5);
+}
+
+.login {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Short Description */
+.description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Contact Button */
+.contact-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(180deg, #a50000, #000000);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: linear-gradient(180deg, #7b0202, #000000);
+    transform: scale(1.05);
+}

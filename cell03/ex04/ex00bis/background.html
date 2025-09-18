@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background(jQuery)</title>
+    <link rel="stylesheet" href="background.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button id="colorBtn">Change Background</button>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) { /* its 6 because hex color has 6 digits after "#" */
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Button click -> change background
+        $("#colorBtn").on("click", function() {
+            $("body").css("background-color", getRandomColor());
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #710606;
+    }
+    .calculator {
+      background: rgb(0, 0, 0);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input, select {
+      margin: 5px;
+      padding: 8px;
+      font-size: 1rem;
+    }
+    input[type="submit"] {
+      background: #6b0000;
+      color: rgb(0, 0, 0);
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    input[type="submit"]:hover {
+      background: #00122e;
+    }
+  </style>
+
+  <!-- ✅ Added jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="calculator">
+    <!-- Left operand -->
+    <input type="text" id="left" placeholder="Left number">
+    
+    <!-- Operator select -->
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    
+    <!-- Right operand -->
+    <input type="text" id="right" placeholder="Right number">
+    
+    <!-- Submit button -->
+    <input type="submit" value="Try me!" id="calculateBtn">
+  </div>
+
+  <script>
+    //Wrap code in jQuery document ready
+    $(document).ready(function () {
+
+      function calculate() {
+        //Changed vanilla JS to jQuery
+        const left = $("#left").val().trim();
+        const right = $("#right").val().trim(); 
+        const operator = $("#operator").val();   
+
+        // Check if both inputs are positive integers
+        if (!/^\d+$/.test(left) || !/^\d+$/.test(right)) {
+          alert("Error :(");
+          return;
+        }
+
+        const numLeft = parseInt(left, 10);
+        const numRight = parseInt(right, 10);
+        let result;
+
+        // Handle division/modulo by zero
+        if ((operator === "/" || operator === "%") && numRight === 0) {
+          alert("It's over 9000!");
+          console.log("It's over 9000!");
+          return;
+        }
+
+        switch (operator) {
+          case "+": result = numLeft + numRight; break;
+          case "-": result = numLeft - numRight; break;
+          case "*": result = numLeft * numRight; break;
+          case "/": result = numLeft / numRight; break;
+          case "%": result = numLeft % numRight; break;
+        }
+
+        //Show result
+        alert("Result: " + result);
+        console.log("Result:", result);
+      }
+
+      //Changed event listener from vanilla JS to jQuery
+      $("#calculateBtn").on("click", calculate);
+
+      setInterval(function () {
+        alert("Please, use me...");
+      }, 30000);
+    });
+  </script>
+</body>
+</html>
